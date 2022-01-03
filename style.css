@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #1d1d1d;
+    background-color: #151515;
     color: #eaeaea;
     margin: 0;
     padding: 0;
@@ -23,11 +23,12 @@ button {
     border-radius: 50px;
     background-color: rgba(0,0,0,0.45);
     padding: 1rem 1.4rem;
+    transition:border 100ms, color 100ms;
 }
 
 button:hover {
-    color: #efbb2a;
-    border-color: #efbb2a;
+    color: #2bb2ec;
+    border-color: #2bb2ec;
 }
 
 button i {
@@ -42,7 +43,7 @@ nav.top_menu {
     justify-content: center;
     align-items: center;
     padding: 0.8rem;
-    background-color: #282828;
+    background-color: #1f1f1f;
 }
 
 .top_menu > div {
@@ -52,6 +53,7 @@ nav.top_menu {
 .on_hover_grey {
     padding: 0.9rem 1.2rem;
     border-radius: 5px;
+    transition: background-color 200ms;
 }
 
 .on_hover_grey:hover {
@@ -60,6 +62,7 @@ nav.top_menu {
 
 nav i {
     color: rgba(255,255,255,0.51);
+    transition: color 200ms;
 }
 
 .on_hover_grey:hover i {
@@ -67,7 +70,7 @@ nav i {
 }
 
 .logo a{
-    background-color: #efbb2a;
+    background-color: #2bb2ec;
     color: #282828;
     padding: 0.3rem 0.7rem;
     font-size: 1.8rem;
@@ -95,7 +98,7 @@ nav i {
     background-color: #fff;
 }
 
-i {
+nav i {
     margin-right: 0.5rem;
 }
 
@@ -125,11 +128,12 @@ section.nb1 {
 .left div.nb1 {
     position: relative;
     display: flex;
-    flex-wrap: wrap;
 }
 
 .left div.nb1 div {
-    width: 100%;
+    width: 80%;
+    display: flex;
+    overflow: hidden;
 }
 
 div.nb1 img {
@@ -150,13 +154,9 @@ div.nb1 button {
     right: 5px;
 }
 
-.left div.nb2 {
-    display: flex;
-}
-
 div.nb2 {
-    z-index: 5;
-    background: linear-gradient(rgb(29, 29, 29, 0), rgb(29 ,29 ,29,90%), rgb(29, 29, 29, 100%));
+    display: flex;
+    background: linear-gradient(rgb(21, 21, 21, 0), rgb(21 ,21 ,21,90%), rgb(21, 21, 21, 100%));
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -210,7 +210,7 @@ div.nb2 div:first-child button {
 }
 
 .right h2 {
-    color: #efbb2a;
+    color: #2bb2ec;
     font-size: 1.8rem;
     font-weight: bold;
 }
@@ -244,4 +244,56 @@ div.nb2 div:first-child button {
 
 .right .text {
     padding-left: 2rem;
+}
+
+/*
+ * footer
+ */
+footer {
+    margin-top: 5rem;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+}
+
+.social div {
+    font-size: 2rem;
+    border-radius: 50px;
+    margin-left: 2rem;
+    padding: 1rem 1.5rem;
+    transition: background-color 200ms;
+}
+
+.social div:hover {
+    background-color: #282828;
+}
+
+.links {
+    margin: auto;
+    width: 55%;
+    font-size: 1.5rem;
+}
+
+.links i {
+    font-size: 0.8rem;
+}
+
+.links a {
+    display: inline-block;
+    padding: 1.5rem 1rem;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+footer div:last-child {
+    text-align: center;
+}
+
+footer span {
+    color: #9e9e9e;
+    font-size: 1.2rem;
 }
