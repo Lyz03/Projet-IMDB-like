@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #282828;
+    background-color: #1d1d1d;
     color: #eaeaea;
     margin: 0;
     padding: 0;
@@ -22,7 +22,7 @@ button {
     border: 1px solid white;
     border-radius: 50px;
     background-color: rgba(0,0,0,0.45);
-    padding: 0.8rem 1.2rem;
+    padding: 1rem 1.4rem;
 }
 
 button:hover {
@@ -42,7 +42,7 @@ nav.top_menu {
     justify-content: center;
     align-items: center;
     padding: 0.8rem;
-    background-color: #323232;
+    background-color: #282828;
 }
 
 .top_menu > div {
@@ -114,10 +114,6 @@ section.nb1 {
     display: flex;
 }
 
-.right {
-    border: 1px solid white;
-}
-
 /*
  * left
  */
@@ -160,7 +156,7 @@ div.nb1 button {
 
 div.nb2 {
     z-index: 5;
-    background: linear-gradient(rgb(40, 40, 40, 0), rgb(40,40,40,90%), rgb(40, 40, 40, 100%));
+    background: linear-gradient(rgb(29, 29, 29, 0), rgb(29 ,29 ,29,90%), rgb(29, 29, 29, 100%));
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -176,6 +172,7 @@ div.nb2 div:first-child button {
     border-radius: 0;
     border: none;
     background-color: rgba(50, 50, 50, 0.80);
+    font-size: 2rem;
 }
 
 .middle {
@@ -208,8 +205,43 @@ div.nb2 div:first-child button {
  */
 .right {
     width: 30%;
+    font-size: 1.3rem;
+    padding-left: 2rem;
 }
 
-.right div > div {
+.right h2 {
+    color: #efbb2a;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.right button {
+    font-size: 0.8rem;
+    padding: 0.65rem 0.9rem;
+}
+
+.right span, .right p  {
+    color: #9e9e9e;
+    margin-left: 1rem;
+}
+
+.right h3 {
+    font-size: 2rem;
+}
+
+.flex {
     display: flex;
+}
+
+.right .images {
+    height: 12rem;
+    margin-bottom: 2rem;
+}
+
+.right img {
+    height: 100%;
+}
+
+.right .text {
+    padding-left: 2rem;
 }
