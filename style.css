@@ -131,13 +131,15 @@ section.nb1 {
 }
 
 .left div.nb1 div {
-    width: 80%;
+    width: 100%;
     display: flex;
     overflow: hidden;
 }
 
 div.nb1 img {
-    width: 100%;
+    height: 506px;
+    transform: translateX(0);
+    transition: transform 1500ms;
 }
 
 div.nb1 button {

@@ -1,14 +1,15 @@
-const Carousel = function (imagesArray, container, nextButton, previousButton, time) {
+const Carousel = function (imagesArray, container, imgBalise, time, title, text, posters, captionContainer) {
     this.images = imagesArray;
     this.container = container;
-    // this.width = widthPx;
-    // this.height = heightPx;
-    this.next = nextButton;
-    this.previous = previousButton;
-    this.time = time
+    this.imgBalise = imgBalise;
+    this.time = time;
+    this.title = title;
+    this.text = text;
+    this.posters = posters
+    this.captionContainer = captionContainer;
 
     this.createHtmlBase = function () {
-        // img and small div
+        // img
         let a = 0;
 
         this.images.forEach(value => {
@@ -20,40 +21,65 @@ const Carousel = function (imagesArray, container, nextButton, previousButton, t
 
             a++;
         });
+
+        document.querySelector(this.captionContainer[3]).src = this.posters[0];
     }
 
-    // swipe effect
+    // for the swipe effect
     let translate = 0;
+    let width;
 
     // for events
     this.previousTransition = function () {
+        width = document.querySelector(this.imgBalise).clientWidth;
+
         // if first image go back to the last one
         if (translate === 0)
-            translate = (imagesArray.length * parseInt(widthPx)) - parseInt(widthPx);
+            translate = (imagesArray.length * width) - width;
         else
-            translate -= parseInt(widthPx);
+            translate -= width;
 
-        document.querySelectorAll('#carousel img').forEach(value => {
+        this.captionUpdate()
+        // translate images
+        document.querySelectorAll(imgBalise).forEach(value => {
             value.style.transform = "translateX(" + (- translate) + "px)";
         });
     }
 
     // for events
     this.nextTransition = function () {
+        width = document.querySelector(imgBalise).clientWidth;
 
         // if last image go back to the first one
-        if (translate === (imagesArray.length * parseInt(widthPx)) - parseInt(widthPx))
+        if (translate === (imagesArray.length * width) - width)
             translate = 0;
         else
-            translate += parseInt(widthPx);
+            translate += width;
 
-        document.querySelectorAll('#carousel img').forEach(value => {
+        this.captionUpdate()
+
+        // translate images
+        document.querySelectorAll(imgBalise).forEach(value => {
             value.style.transform = "translateX(-" + translate + "px)";
         });
     }
 
+
     this.nextAuto = function () {
-        setInterval(() => this.nextTransition(), 5000)
+        setInterval(() => this.nextTransition(), 7000);
     }
 
+
+    // update the caption for each image
+    this.captionUpdate = () => {
+        let index = translate / width;
+
+        setTimeout(() => {
+            document.querySelector(this.captionContainer[0]).innerText = this.time[index];
+            document.querySelector(this.captionContainer[1]).innerText = this.title[index];
+            document.querySelector(this.captionContainer[2]).innerText = this.text[index];
+            document.querySelector(this.captionContainer[3]).src = this.posters[index];
+        }, 500)
+
+    }
 }
