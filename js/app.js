@@ -64,8 +64,6 @@ const upNextContainer = [
     "div.images img"
 ]
 
-console.log(document.querySelector('#poster'))
-
 let section1Carousel = new Carousel(images, container, 'div.nb1 img', time, title, text, posters, captionContainer, upNextContainer);
 section1Carousel.createHtmlBase();
 section1Carousel.nextAuto();
@@ -77,5 +75,4 @@ previousButton.addEventListener("click", function () {
 
 nextButton.addEventListener("click", function () {
     section1Carousel.nextTransition();
-    section1Carousel.captionUpdate();
 });
