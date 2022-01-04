@@ -1,4 +1,4 @@
-const Carousel = function (imagesArray, container, imgBalise, time, title, text, posters, captionContainer) {
+const Carousel = function (imagesArray, container, imgBalise, time, title, text, posters, captionContainer, upNextContainer) {
     this.images = imagesArray;
     this.container = container;
     this.imgBalise = imgBalise;
@@ -7,6 +7,7 @@ const Carousel = function (imagesArray, container, imgBalise, time, title, text,
     this.text = text;
     this.posters = posters
     this.captionContainer = captionContainer;
+    this.upNextContainer = upNextContainer;
 
     this.createHtmlBase = function () {
         // img
@@ -79,7 +80,36 @@ const Carousel = function (imagesArray, container, imgBalise, time, title, text,
             document.querySelector(this.captionContainer[1]).innerText = this.title[index];
             document.querySelector(this.captionContainer[2]).innerText = this.text[index];
             document.querySelector(this.captionContainer[3]).src = this.posters[index];
-        }, 500)
 
+            this.upNextUpdate(index, this.upNextContainer[0], this.time);
+            this.upNextUpdate(index, this.upNextContainer[1], this.title);
+            this.upNextUpdate(index, this.upNextContainer[2], this.text);
+
+            let a = index;
+
+            document.querySelectorAll(this.upNextContainer[3]).forEach(value => {
+
+                if (a < this.images.length - 1)
+                    a++
+                else
+                    a = 0;
+
+                value.src = posters[a];
+            })
+        }, 500);
+    }
+
+    this.upNextUpdate = function (index, container, array) {
+        let a = index;
+
+        document.querySelectorAll(container).forEach(value => {
+
+            if (a < this.images.length - 1)
+                a++
+            else
+                a = 0;
+
+            value.innerText = array[a];
+        })
     }
 }
