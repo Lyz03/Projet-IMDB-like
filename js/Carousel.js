@@ -42,14 +42,14 @@ const Carousel = function (imagesArray, container, imgBalise, time, title, text,
 
         this.captionUpdate()
         // translate images
-        document.querySelectorAll(imgBalise).forEach(value => {
+        document.querySelectorAll(this.imgBalise).forEach(value => {
             value.style.transform = "translateX(" + (- translate) + "px)";
         });
     }
 
     // for events
     this.nextTransition = function () {
-        width = document.querySelector(imgBalise).clientWidth;
+        width = document.querySelector(this.imgBalise).clientWidth;
 
         // if last image go back to the first one
         if (translate === (imagesArray.length * width) - width)
@@ -60,7 +60,7 @@ const Carousel = function (imagesArray, container, imgBalise, time, title, text,
         this.captionUpdate()
 
         // translate images
-        document.querySelectorAll(imgBalise).forEach(value => {
+        document.querySelectorAll(this.imgBalise).forEach(value => {
             value.style.transform = "translateX(-" + translate + "px)";
         });
     }
@@ -94,7 +94,7 @@ const Carousel = function (imagesArray, container, imgBalise, time, title, text,
                 else
                     a = 0;
 
-                value.src = posters[a];
+                value.src = this.posters[a];
             })
         }, 500);
     }
