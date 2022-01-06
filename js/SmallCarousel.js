@@ -1,9 +1,10 @@
-const SmallCarousel = function (srcArray, ratingArray, titleArray, greyButtonText, container) {
+const SmallCarousel = function (srcArray, ratingArray, titleArray, greyButtonText, container, containerWidth) {
     this.src = srcArray;
     this.rating = ratingArray;
     this.title = titleArray;
     this.greyButtonText = greyButtonText;
     this.container = container;
+    this.containerWidth = containerWidth;
 
     this.createHtmlBase = function () {
 
@@ -63,6 +64,41 @@ const SmallCarousel = function (srcArray, ratingArray, titleArray, greyButtonTex
             trailerButton.prepend(i3)
 
             this.container.appendChild(posterCard)
+        });
+    }
+
+    let translate = 0;
+    let width;
+
+    // for events
+    this.previousTransition = function () {
+        width = document.querySelector(this.containerWidth).clientWidth;
+
+        // if first image go back to the last one
+        if (translate === 0)
+            translate = (this.src.length * width) - width * 6;
+        else
+            translate -= width * 4;
+
+        // translate images
+        document.querySelectorAll(this.containerWidth).forEach(value => {
+            value.style.transform = "translateX(" + (- translate) + "px)";
+        });
+    }
+
+    // for events
+    this.nextTransition = function () {
+        width = document.querySelector(this.containerWidth).clientWidth;
+
+        // if last image go back to the first one
+        if (translate === (this.src.length * width) - width * 6)
+            translate = 0;
+        else
+            translate += width * 4;
+
+        // translate images
+        document.querySelectorAll(this.containerWidth).forEach(value => {
+            value.style.transform = "translateX(-" + translate + "px)";
         });
     }
 }

@@ -298,6 +298,8 @@ div.nb2 div:first-child button {
     margin-right: 2rem;
     background-color: #262626;
     border-radius: 5px;
+    transform: translateX(0);
+    transition: transform 300ms;
 }
 
 .poster_card img {

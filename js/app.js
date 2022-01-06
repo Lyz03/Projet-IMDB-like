@@ -120,6 +120,15 @@ let smallCarousel1Title = [
 
 let smallCarousel1Container = document.querySelector('#fanFavContainer');
 
-let smallCarousel1 = new SmallCarousel(smallCarousel1Images, smallCarousel1Rating, smallCarousel1Title, "+ Watchlist", smallCarousel1Container);
+let smallCarousel1 = new SmallCarousel(smallCarousel1Images, smallCarousel1Rating, smallCarousel1Title,
+    "+ Watchlist", smallCarousel1Container, ".poster_card");
 
 smallCarousel1.createHtmlBase();
+
+document.querySelector('#fanFav .previous').addEventListener("click", function () {
+    smallCarousel1.previousTransition();
+});
+
+document.querySelector('#fanFav .next').addEventListener("click", function () {
+    smallCarousel1.nextTransition();
+});
