@@ -36,11 +36,12 @@ const Carousel = function (imagesArray, container, imgBalise, time, title, text,
 
         // if first image go back to the last one
         if (translate === 0)
-            translate = (imagesArray.length * width) - width;
+            translate = (this.images.length * width) - width;
         else
             translate -= width;
 
-        this.captionUpdate()
+        this.captionUpdate();
+
         // translate images
         document.querySelectorAll(this.imgBalise).forEach(value => {
             value.style.transform = "translateX(" + (- translate) + "px)";
@@ -52,12 +53,12 @@ const Carousel = function (imagesArray, container, imgBalise, time, title, text,
         width = document.querySelector(this.imgBalise).clientWidth;
 
         // if last image go back to the first one
-        if (translate === (imagesArray.length * width) - width)
+        if (translate === (this.images.length * width) - width)
             translate = 0;
         else
             translate += width;
 
-        this.captionUpdate()
+        this.captionUpdate();
 
         // translate images
         document.querySelectorAll(this.imgBalise).forEach(value => {

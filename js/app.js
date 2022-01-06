@@ -79,76 +79,47 @@ nextButton.addEventListener("click", function () {
 
 // small carousel
 
+let smallCarousel1Images = [
+    "/images/smallCarousel/dont-look-up-poster.jpg",
+    "/images/smallCarousel/spider-man-poster.jpg",
+    "/images/smallCarousel/hawkeye-poster.jpg",
+    "/images/smallCarousel/the-witcher-poster.jpg",
+    "/images/smallCarousel/the-unforgivable-poster.jpg",
+    "/images/smallCarousel/dune-poster.jpg",
+    "/images/smallCarousel/wheel-of-time-poster.jpg",
+    "/images/smallCarousel/arcane-poster.jpg",
+    "/images/smallCarousel/squid-game-poster.jpg",
+    "/images/smallCarousel/free-guy-poster.jpg",
+];
 
-/**
- * creat the html for each images
- * @param srcArray
- * @param ratingArray
- * @param titleArray
- * @param greyButtonText
- */
-function smallCarouselHtml(srcArray, ratingArray, titleArray, greyButtonText) {
+let smallCarousel1Rating = [
+    "7.3",
+    "8.8",
+    "7.8",
+    "8.2",
+    "7.2",
+    "8.2",
+    "7.3",
+    "9.2",
+    "8.0",
+    "7.2"
+];
 
-    let container = document.querySelector('#fanFavContainer')
+let smallCarousel1Title = [
+    "Don't Look Up: Déni cosmique",
+    "Spider-Man: No Way Home",
+    "Hawkeye",
+    "The Witcher",
+    "Impardonnable",
+    "Dune",
+    "The Wheel of Time",
+    "Arcane",
+    "Squid Game",
+    "Free Guy"
+];
 
-    srcArray.forEach(value => {
-        let posterCard = document.createElement('div');
-        posterCard.className = "poster_card";
+let smallCarousel1Container = document.querySelector('#fanFavContainer');
 
-        let img = document.createElement('img');
-        img.src = value;
-        posterCard.appendChild(img);
+let smallCarousel1 = new SmallCarousel(smallCarousel1Images, smallCarousel1Rating, smallCarousel1Title, "+ Watchlist", smallCarousel1Container);
 
-        let div = document.createElement('div');
-        div.className = "margin";
-        posterCard.appendChild(div);
-
-        let addButton = document.createElement('button');
-        addButton.innerText = "+";
-        addButton.className = "add";
-        div.appendChild(addButton);
-
-        let blueStar = document.createElement('i');
-        blueStar.classList.add("fas");
-        blueStar.classList.add("fa-star");
-        blueStar.classList.add("blue");
-        div.appendChild(blueStar);
-
-        let span = document.createElement('span');
-        span.innerText = ratingArray[srcArray.indexOf(value)];
-        div.appendChild(span);
-
-        let starButton = document.createElement('button');
-        starButton.className = 'star';
-        div.appendChild(starButton);
-
-        let i2 = document.createElement('i');
-        i2.classList.add('far');
-        i2.classList.add('fa-star');
-        starButton.appendChild(i2);
-
-        let h3 = document.createElement('h3');
-        h3.innerText = titleArray[srcArray.indexOf(value)];
-        div.appendChild(h3);
-
-        let greyButton = document.createElement('button');
-        greyButton.className = "grey_button"
-        greyButton.innerText = greyButtonText;
-        div.appendChild(greyButton);
-
-        let trailerButton = document.createElement('button');
-        trailerButton.className = "trailer";
-        trailerButton.innerText = "Trailer";
-        div.appendChild(trailerButton);
-
-        let i3 = document.createElement('i');
-        i3.classList.add('fas');
-        i3.classList.add('fa-play');
-        trailerButton.prepend(i3)
-
-        container.appendChild(posterCard)
-    })
-}
-
-//test
-smallCarouselHtml(["/images/uncharted-poster.jpg"], ["8.2"], ["Uncharted"], "+ Watchlist")
+smallCarousel1.createHtmlBase();

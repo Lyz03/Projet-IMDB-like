@@ -290,18 +290,18 @@ div.nb2 div:first-child button {
 #fanFavContainer {
     padding-top: 2rem;
     display: flex;
+    overflow: hidden;
 }
 
 .poster_card {
     position: relative;
-    width: 14%;
     margin-right: 2rem;
     background-color: #262626;
     border-radius: 5px;
 }
 
 .poster_card img {
-    width: 100%;
+    width: 15.9rem;
 }
 
 .margin {
