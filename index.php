@@ -17,7 +17,7 @@
 <body>
 
 <?php
-    require "menu.php";
+    require "php/menu.php";
 ?>
 
 <section class="nb1">

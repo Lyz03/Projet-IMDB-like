@@ -347,10 +347,12 @@ div.nb2 div:first-child button {
 }
 
 .trailer {
+    display: inline-block;
     background-color: transparent;
     transition: background-color 200ms;
     border: none;
-    margin: 1rem auto;
+    margin-top: 1rem;
+    padding: 0.7rem 1rem;
     border-radius: 5px;
 }
 

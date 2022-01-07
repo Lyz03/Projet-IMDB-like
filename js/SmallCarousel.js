@@ -1,7 +1,8 @@
-const SmallCarousel = function (srcArray, ratingArray, titleArray, greyButtonText, container, containerWidth) {
+const SmallCarousel = function (srcArray, ratingArray, titleArray, hrefArray, greyButtonText, container, containerWidth) {
     this.src = srcArray;
     this.rating = ratingArray;
     this.title = titleArray;
+    this.href = hrefArray;
     this.greyButtonText = greyButtonText;
     this.container = container;
     this.containerWidth = containerWidth;
@@ -53,15 +54,25 @@ const SmallCarousel = function (srcArray, ratingArray, titleArray, greyButtonTex
             greyButton.innerText = this.greyButtonText;
             div.appendChild(greyButton);
 
+            /*
             let trailerButton = document.createElement('button');
             trailerButton.className = "trailer";
             trailerButton.innerText = "Trailer";
             div.appendChild(trailerButton);
 
+             */
+
+            let a = document.createElement('a');
+            a.href = this.href[this.src.indexOf(value)];
+            a.className = "trailer";
+            a.innerText = "Trailer";
+            a.target = "_blank";
+            div.appendChild(a);
+
             let i3 = document.createElement('i');
             i3.classList.add('fas');
             i3.classList.add('fa-play');
-            trailerButton.prepend(i3)
+            a.prepend(i3)
 
             this.container.appendChild(posterCard)
         });

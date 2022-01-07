@@ -3,7 +3,7 @@
 ?>
 
 <nav class="top_menu">
-    <div class="logo"><a href="index.php">IMDb</a></div>
+    <div class="logo"><a href="../index.php">IMDb</a></div>
     <div><a class="on_hover_grey" href=""><i class="fas fa-bars"></i>Menu</a></div>
 
     <!-- Bootstrap -->

@@ -117,9 +117,22 @@ let smallCarousel1Title = [
     "Free Guy"
 ];
 
+let smallCarousel1Href = [
+    "https://www.youtube.com/watch?v=wplebVZB8FQ",
+    "https://www.youtube.com/watch?v=7w_w10HVa54",
+    "https://www.youtube.com/watch?v=sulRiT2Cm-I",
+    "https://www.youtube.com/watch?v=_dYsvC9fJ8I",
+    "https://www.youtube.com/watch?v=rqJAethv9kM",
+    "https://www.youtube.com/watch?v=fDYnHcM58t0",
+    "https://www.youtube.com/watch?v=-ADarnCYs8I",
+    "https://www.youtube.com/watch?v=v-dgpzE7txk",
+    "https://www.youtube.com/watch?v=_434vl32oJY",
+    "https://www.youtube.com/watch?v=sL5SgG_mxF8"
+]
+
 let smallCarousel1Container = document.querySelector('#fanFavContainer');
 
-let smallCarousel1 = new SmallCarousel(smallCarousel1Images, smallCarousel1Rating, smallCarousel1Title,
+let smallCarousel1 = new SmallCarousel(smallCarousel1Images, smallCarousel1Rating, smallCarousel1Title, smallCarousel1Href,
     "+ Watchlist", smallCarousel1Container, ".poster_card");
 
 smallCarousel1.createHtmlBase();
