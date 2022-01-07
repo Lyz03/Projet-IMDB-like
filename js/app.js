@@ -44,6 +44,13 @@ let posters = [
     "/images/watch-to-watch-poster.jpg",
     "/images/doctor-strange-poster.jpg",
     "/images/watch-to-watch-poster.jpg"
+];
+
+let trailerLink = [
+    "https://www.youtube.com/watch?v=4wCH1K-ckZw",
+    "https://www.imdb.com/video/vi2261304089?ref_=hp_hp_e_4&listId=ls081395803",
+    "https://www.youtube.com/watch?v=Rt_UqUm38BI",
+    "https://www.imdb.com/video/vi2261304089?ref_=hp_hp_e_4&listId=ls081395803"
 ]
 
 const container = document.querySelector('.left div.nb1 div');
@@ -54,17 +61,19 @@ const captionContainer = [
     ".bottom span",
     ".bottom h2",
     ".bottom p",
-    "#poster"
+    "#poster",
+    ".left .play"
 ]
 
 const upNextContainer = [
     "div.text span",
     "div.text h3",
     "div.text p",
-    "div.images img"
+    "div.images img",
+    ".right .play"
 ]
 
-let section1Carousel = new Carousel(images, container, 'div.nb1 img', time, title, text, posters, captionContainer, upNextContainer);
+let section1Carousel = new Carousel(images, container, 'div.nb1 img', time, title, text, posters, trailerLink, captionContainer, upNextContainer);
 section1Carousel.createHtmlBase();
 section1Carousel.nextAuto();
 

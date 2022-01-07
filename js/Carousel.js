@@ -1,11 +1,12 @@
-const Carousel = function (imagesArray, container, imgBalise, time, title, text, posters, captionContainer, upNextContainer) {
+const Carousel = function (imagesArray, container, imgBalise, time, title, text, posters, trailerLink, captionContainer, upNextContainer) {
     this.images = imagesArray;
     this.container = container;
     this.imgBalise = imgBalise;
     this.time = time;
     this.title = title;
     this.text = text;
-    this.posters = posters
+    this.posters = posters;
+    this.trailerLink = trailerLink;
     this.captionContainer = captionContainer;
     this.upNextContainer = upNextContainer;
 
@@ -81,13 +82,16 @@ const Carousel = function (imagesArray, container, imgBalise, time, title, text,
             document.querySelector(this.captionContainer[1]).innerText = this.title[index];
             document.querySelector(this.captionContainer[2]).innerText = this.text[index];
             document.querySelector(this.captionContainer[3]).src = this.posters[index];
+            document.querySelector((this.captionContainer[4])).href = this.trailerLink[index];
 
+            // for innerText
             this.upNextUpdate(index, this.upNextContainer[0], this.time);
             this.upNextUpdate(index, this.upNextContainer[1], this.title);
             this.upNextUpdate(index, this.upNextContainer[2], this.text);
 
             let a = index;
 
+            // for src
             document.querySelectorAll(this.upNextContainer[3]).forEach(value => {
 
                 if (a < this.images.length - 1)
@@ -96,8 +100,22 @@ const Carousel = function (imagesArray, container, imgBalise, time, title, text,
                     a = 0;
 
                 value.src = this.posters[a];
-            })
+            });
+
+            a = index;
+            // for href
+            document.querySelectorAll(this.upNextContainer[4]).forEach(value => {
+
+                if (a < this.images.length - 1)
+                    a++
+                else
+                    a = 0;
+
+                value.href = this.trailerLink[a];
+            });
+
         }, 500);
+
     }
 
     this.upNextUpdate = function (index, container, array) {

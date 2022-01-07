@@ -35,7 +35,7 @@
             </div>
 
             <div class="middle">
-                <button><i class="fas fa-play"></i></button>
+                <a href="https://www.youtube.com/watch?v=4wCH1K-ckZw" class="play" target="_blank"><i class="fas fa-play"></i></a>
             </div>
 
             <div class="bottom">
@@ -61,7 +61,9 @@
                 </div>
 
                 <div class="text">
-                    <button><i class="fas fa-play"></i></button>
+                    <a href="https://www.imdb.com/video/vi2261304089?ref_=hp_hp_e_4&listId=ls081395803" class="play" target="_blank">
+                        <i class="fas fa-play"></i>
+                    </a>
                     <span>2:45</span>
                     <h3>The Most Anticipated New Movies of 2022</h3>
                     <p>Get Your Watchlists Ready</p>
@@ -74,7 +76,9 @@
                 </div>
 
                 <div class="text">
-                    <button><i class="fas fa-play"></i></button>
+                    <a href="https://www.youtube.com/watch?v=Rt_UqUm38BI" class="play" target="_blank">
+                        <i class="fas fa-play"></i>
+                    </a>
                     <span>2:12</span>
                     <h3>'Doctor Strange in the Multiverse of Madness'</h3>
                     <p>Watch the Teaser Trailer</p>
@@ -87,7 +91,9 @@
                 </div>
 
                 <div class="text">
-                    <button><i class="fas fa-play"></i></button>
+                    <a href="https://www.imdb.com/video/vi2261304089?ref_=hp_hp_e_4&listId=ls081395803" class="play" target="_blank">
+                        <i class="fas fa-play"></i>
+                    </a>
                     <span>2:30</span>
                     <h3>IMDb Users' Most Anticipated Series</h3>
                     <p>New TV Coming in 2022</p>

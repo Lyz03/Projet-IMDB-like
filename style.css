@@ -18,7 +18,7 @@ a:hover {
     text-decoration: none;
 }
 
-button {
+button, .play {
     border: 1px solid white;
     border-radius: 50px;
     background-color: rgba(0,0,0,0.45);
@@ -26,7 +26,7 @@ button {
     transition:border 100ms, color 100ms;
 }
 
-button:hover {
+button:hover, .play:hover {
     color: #2bb2ec;
     border-color: #2bb2ec;
 }
