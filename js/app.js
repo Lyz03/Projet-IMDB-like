@@ -78,7 +78,6 @@ nextButton.addEventListener("click", function () {
 });
 
 // small carousel
-
 let smallCarousel1Images = [
     "/images/smallCarousel/dont-look-up-poster.jpg",
     "/images/smallCarousel/spider-man-poster.jpg",
